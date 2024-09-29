@@ -1,8 +1,20 @@
 helm repo add phntom https://phntom.kix.co.il/charts/
 helm repo add twuni https://helm.twun.io
 helm repo update
+helm search repo docker-registry
 helm list
+
+#option 1
+---------
 helm install -f values.yaml docker-registry twuni/docker-registry
 
-  
-  
+#option 2
+---------
+git clone https://github.com/twuni/docker-registry.helm.git
+cd ~/docker-registry*
+helm install docker-registry .
+
+#get dashboard token
+-------------------
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+
