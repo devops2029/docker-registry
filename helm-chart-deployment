@@ -3,6 +3,9 @@ helm repo add twuni https://helm.twun.io
 helm repo update
 helm search repo docker-registry
 helm list
+htpasswd -c /path/to/.htpasswd username
+htpasswd /path/to/.htpasswd username
+
 
 #option 1
 ---------
