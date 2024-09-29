@@ -1,0 +1,8 @@
+helm repo add phntom https://phntom.kix.co.il/charts/
+helm repo add twuni https://helm.twun.io
+helm repo update
+helm list
+helm install -f values.yaml docker-registry twuni/docker-registry
+
+  
+  
